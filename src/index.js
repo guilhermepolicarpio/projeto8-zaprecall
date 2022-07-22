@@ -6,9 +6,13 @@ import FlashcardScreen from "./components/flashcard-screen";
 const rootHtml= document.querySelector(".root")
 
 export default function App(){
+
+    const [tela, setTela] = React.useState('initial');
+
     return(
-        <InitialScreen/>
-        //<FlashcardScreen/>
+        <>
+         {tela ==='initial' ? (<InitialScreen setTela={setTela}/> ) : ( <FlashcardScreen /> )}
+        </>
     )
 }
 
