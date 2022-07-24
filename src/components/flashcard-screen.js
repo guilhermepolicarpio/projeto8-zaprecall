@@ -1,7 +1,7 @@
 import React from 'react'
 import Top from './top'
 import Cards from './Cards';
-
+import Footer from './Footer';
 
     const questions = [
         {question: " O que é JSX? ", answer:"Uma extensão de linguagem do JavaScript"},
@@ -32,6 +32,7 @@ import Cards from './Cards';
                 return <Cards key={index} questionNumber={index+1} question={flashCard.question} answer={flashCard.answer}/>
             })}
         </div>
+        <Footer/>
      
     </div>
     )
