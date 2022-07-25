@@ -1,29 +1,18 @@
 import React from 'react';
 import Set from "../../src/assets/images/Vector.png"
 import Reveal from "../../src/assets/images/setinha.png"
-import Error from "../../src/assets/images/error.png"
-import Doubt from "../../src/assets/images/doubt.png"
-import Correct from "../../src/assets/images/correct.png"
 
-export default function Cards({questionNumber,answer,question}){
+
+export default function Cards({questionNumber,answer,question,updateResult,optionIcon}){
 
     const [level, setLevel] = React.useState(1);
     const [recall, setRecall] = React.useState("");
-
-
+    
+    
     function clickRecall(answer) {
         setLevel(4);
         setRecall(answer);
-    }
-
-    function optionIcon(recall){
-        if(recall==='Error') {
-            return Error;
-        } else if(recall==='Doubt') {
-            return Doubt;
-        } else if(recall==='Correct') {
-            return Correct;
-        }
+        updateResult(answer);
     }
    
     switch(level){
@@ -58,7 +47,8 @@ export default function Cards({questionNumber,answer,question}){
         return (
             <div className='box'>
                 <div className = 'finalCard'>
-                <p className={recall}>Pergunta {questionNumber} <img src={optionIcon(recall)} alt=''/></p>
+                <p className={recall}>Pergunta {questionNumber} 
+                <img src={optionIcon(recall)} alt=''/></p>
                 </div>
             </div>
         );

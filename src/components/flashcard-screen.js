@@ -2,6 +2,9 @@ import React from 'react'
 import Top from './top'
 import Cards from './Cards';
 import Footer from './Footer';
+import Error from "../../src/assets/images/error.png"
+import Doubt from "../../src/assets/images/doubt.png"
+import Correct from "../../src/assets/images/correct.png"
 
     const questions = [
         {question: " O que é JSX? ", answer:"Uma extensão de linguagem do JavaScript"},
@@ -20,19 +23,33 @@ import Footer from './Footer';
     
     questions.sort(alternate);
 
-    console.log(questions)
-
     export default function FlashcardScreen(){
 
+        const [result, setResult] = React.useState([]);
+
+        function updateResult(answer){
+            setResult([...result,answer]);
+            console.log(result)
+        }
+
+        function optionIcon(recall){
+            if(recall==='Error') {
+                return Error;
+            } else if(recall==='Doubt') {
+                return Doubt;
+            } else if(recall==='Correct') {
+                return Correct;
+            }
+        }
     return(
     <div className="content flashcard-screen">
         <Top/>
         <div>{
             questions.map((flashCard,index) => { 
-                return <Cards key={index} questionNumber={index+1} question={flashCard.question} answer={flashCard.answer}/>
+                return <Cards key={index} questionNumber={index+1} question={flashCard.question} answer={flashCard.answer} updateResult={updateResult} optionIcon={optionIcon}/>
             })}
         </div>
-        <Footer/>
+        <Footer result={result} optionIcon={optionIcon} questions={questions}/>
      
     </div>
     )

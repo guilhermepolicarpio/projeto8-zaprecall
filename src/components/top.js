@@ -5,8 +5,6 @@ export default function Top(){
         <div className="top">
               <img src={Logo} alt=""/>
               <h1>ZapRecall</h1>
-
-                
             </div>
     )
 }
