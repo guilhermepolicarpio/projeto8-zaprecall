@@ -6,7 +6,7 @@ import Doubt from '../../src/assets/images/doubt.png';
 import Error from '../../src/assets/images/error.png';
 import Cards from './Cards';
 import Footer from './Footer';
-import Top from './top';
+import Top from './Top';
 
 const questions = [
     { question: " O que é JSX? ", answer: "Uma extensão de linguagem do JavaScript" },
@@ -45,7 +45,7 @@ export default function FlashcardScreen() {
     return (
         <ContentWrapper>
             <Top />
-            <>{
+            {
                 questions.map((flashCard, index) => {
                    return <Cards
                         key={index}
@@ -55,7 +55,7 @@ export default function FlashcardScreen() {
                         updateResult={updateResult}
                         optionIcon={optionIcon} />
                 })}
-            </>
+    
             <Footer result={result} optionIcon={optionIcon} questions={questions} />
 
         </ContentWrapper>
@@ -64,9 +64,7 @@ export default function FlashcardScreen() {
 
 const ContentWrapper = styled.section`
   display: flex;
-  justify-content: flex-start;
   flex-direction: column;
   align-items: center;
-  z-index: 1;
-  background-color: rgba(251, 107, 107, 1);
+  flex-direction: column;
 `;
