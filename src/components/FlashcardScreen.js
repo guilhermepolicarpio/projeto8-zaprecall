@@ -67,4 +67,5 @@ const ContentWrapper = styled.section`
   flex-direction: column;
   align-items: center;
   flex-direction: column;
+  padding-bottom: 160px;
 `;

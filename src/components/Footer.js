@@ -21,13 +21,12 @@ export default function Footer({ result, optionIcon, questions }) {
             return (
                 <FooterWrapper>
                     <h2>{result.length}/8 CONCLUÍDOS</h2>
-                    <div>
                         {result.map((answer, index) =>
                             <img class="iconImg"
                                 key={index}
                                 src={optionIcon(answer)}
                                 alt='' />)}
-                    </div>
+       
                 </FooterWrapper>
             )
 
