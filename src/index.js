@@ -1,17 +1,20 @@
-import ReactDOM from "react-dom";
-import React from "react";
-import InitialScreen from "./components/initial-screen";
-import FlashcardScreen from "./components/flashcard-screen";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-const rootHtml= document.querySelector(".root")
+import FlashcardScreen from './components/FlashcardScreen';
+import InitialScreen from './components/InitialScreen';
 
-export default function App(){
+
+const rootHtml = document.querySelector(".root")
+
+export default function App() {
 
     const [tela, setTela] = React.useState('initial');
 
-    return(
+    return (
         <>
-         {tela ==='initial' ? (<InitialScreen setTela={setTela}/> ) : ( <FlashcardScreen /> )}
+            {tela === 'initial' ? (<InitialScreen setTela={setTela} />) 
+            : (<FlashcardScreen />)}
         </>
     )
 }
