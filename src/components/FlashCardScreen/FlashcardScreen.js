@@ -1,12 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
 
-import Correct from '../../src/assets/images/correct.png';
-import Doubt from '../../src/assets/images/doubt.png';
-import Error from '../../src/assets/images/error.png';
-import Cards from './Cards';
-import Footer from './Footer';
-import Top from './Top';
+import Correct from '../../assets/images/correct.png';
+import Doubt from '../../assets/images/doubt.png';
+import Error from '../../assets/images/error.png';
+import Cards from '../Cards/Cards.js';
+import Footer from '../Footer/Footer';
+import Top from '../Header/Header';
+import { ContentWrapper } from './FlashcardScreen-styled';
 
 const questions = [
     { question: " O que é JSX? ", answer: "Uma extensão de linguagem do JavaScript" },
@@ -47,7 +47,7 @@ export default function FlashcardScreen() {
             <Top />
             {
                 questions.map((flashCard, index) => {
-                   return <Cards
+                    return <Cards
                         key={index}
                         questionNumber={index + 1}
                         question={flashCard.question}
@@ -55,17 +55,12 @@ export default function FlashcardScreen() {
                         updateResult={updateResult}
                         optionIcon={optionIcon} />
                 })}
-    
-            <Footer result={result} optionIcon={optionIcon} questions={questions} />
+
+            <Footer
+                result={result}
+                optionIcon={optionIcon}
+                questions={questions} />
 
         </ContentWrapper>
     )
 }
-
-const ContentWrapper = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-direction: column;
-  padding-bottom: 160px;
-`;

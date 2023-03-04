@@ -1,17 +1,6 @@
 import styled from 'styled-components';
 
-import Logo from '../../src/assets/images/logo-pequeno.png';
-
-export default function Top() {
-    return (
-        <TopWrapper>
-            <img src={Logo} alt="" />
-            <h1>ZapRecall</h1>
-        </TopWrapper>
-    )
-}
-
-const TopWrapper = styled.section`
+export const HeaderWrapper = styled.section`
 display: flex;
 justify-content: center;
 align-items: center;
