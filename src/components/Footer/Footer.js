@@ -7,7 +7,7 @@ import { Button, FooterWrapper, IconWrapper, MessageWrapper } from './Footer-sty
 export default function Footer({ result, optionIcon, questions, setTela }) {
 
     const [status, setStatus] = React.useState('');
-
+    console.log(setTela)
     if (result.length === 8 && status === '') {
         if (result.filter((item) => item === 'Correct').length === questions.length) {
             setStatus('in');

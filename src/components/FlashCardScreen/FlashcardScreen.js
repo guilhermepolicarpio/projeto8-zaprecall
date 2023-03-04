@@ -25,7 +25,7 @@ function alternate() {
 
 questions.sort(alternate);
 
-export default function FlashcardScreen() {
+export default function FlashcardScreen({setTela}) {
 
     const [result, setResult] = React.useState([]);
 
@@ -59,7 +59,8 @@ export default function FlashcardScreen() {
             <Footer
                 result={result}
                 optionIcon={optionIcon}
-                questions={questions} />
+                questions={questions} 
+                setTela={setTela}/>
 
         </ContentWrapper>
     )
